@@ -6,7 +6,7 @@
 /*   By: aelmrabe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 08:37:39 by aelmrabe          #+#    #+#             */
-/*   Updated: 2022/07/26 08:37:51 by aelmrabe         ###   ########.fr       */
+/*   Updated: 2022/07/26 09:06:19 by aelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,26 @@ void ft_putchar(char c) /*
                           char c : the Data type of parameter is char{*6}.
                          */
 {
-        write(1, &c, 1); // We can't use Printf because is forbidden but we have write() althoug is Not a function is a system call in Unix {*7}
+        write(1, &c, 1); /*
+                           We can't use Printf because is forbidden but we have write() althoug is Not a function is a system call in Unix {*7}
+                           1 : is the descriptor of I/O stream 
+                           &c: using this & symbole Write will take the address of variable and send this to funtion to print the contents of this address
+                           1 : the size of the content . 
+                        */
 }
+
+//Some info about Write
+/*
+   Identifier of Input/Output (I/O) stream : 
+          -> 0 : stdin , standard input (keyboard)
+          -> 1 : stdout , standard output (screen)
+          -> 2 : stderr , standard error (screen)
+   So when you open a file in your Operating system linux (OS Linux)
+   OS creates an entry for views and edit this file . 
+   if you open 100 file your OS will create this entries . 
+   So we need integers to represent this entries like (170,12,71...) this entry number is the file descriptor that it describe the file. 
+   So OS have 3 constent entries 0 1 and 2 .
+*/
 
 // the Main Function .
 char main(char c){
