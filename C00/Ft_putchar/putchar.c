@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   putchar.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aelmrabe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/26 08:37:39 by aelmrabe          #+#    #+#             */
+/*   Updated: 2022/07/26 08:37:51 by aelmrabe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /* ************************************************************************** 
          Write a function that displays the character passed as a parameter.   
                  The function should be declared like this:
@@ -16,6 +28,7 @@
               [*4] : https://www.geeksforgeeks.org/functions-in-c/ , https://www.tutorialspoint.com/cprogramming/c_functions.htm   
               [*5] : https://ecomputernotes.com/what-is-c/function-a-pointer/void-functions
               [*6] : https://www.geeksforgeeks.org/data-types-in-c/
+              [*7] : http://codewiki.wikidot.com/c:system-calls:write , https://dextutor.com/write-read-system-call/ ,  https://www.youtube.com/watch?v=DJ_GcdS-rmE&ab_channel=DexTutor
 ****************************************************************************/
 
 #include <unistd.h>  // Unistd Lib is for Unix System is a header file that provides access to the POSIX Linux API {check *2}
@@ -28,9 +41,10 @@ void ft_putchar(char c) /*
                           char c : the Data type of parameter is char{*6}.
                          */
 {
-        write(1, &c, 1); // here i use 
+        write(1, &c, 1); // We can't use Printf because is forbidden but we have write() althoug is Not a function is a system call in Unix {*7}
 }
 
+// the Main Function .
 char main(char c){
         write(1,"can you please give me your char? :  ",37);
         read(1,&c,1);
