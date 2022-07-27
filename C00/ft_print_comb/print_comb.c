@@ -5,66 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelmrabe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 19:18:29 by aelmrabe          #+#    #+#             */
-/*   Updated: 2022/07/27 04:00:07 by aelmrabe         ###   ########.fr       */
+/*   Created: 2022/07/27 07:33:50 by aelmrabe          #+#    #+#             */
+/*   Updated: 2022/07/27 07:34:40 by aelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ************************************************************************** 
-                             Some Info : 
-                            
- ************************************************************************** */
 #include <unistd.h>
 
-
-void	ft_putchar(char c)
+void ft_putchar(char c)
 {
-	write(1, &c, 1);
+    write(1, &c, 1);
 }
-
-void	ft_commas(void)
+void ft_print_comb(void)
 {
-	ft_putchar(',');
-	ft_putchar(' ');
-}
+    char num[3];
 
-void printing(char f, char m, char l)
-{
-    ft_putchar(f);
-    ft_putchar(m);
-    ft_putchar(l);
-}
-
-void print_comb(void)
-{
-    char f;
-    char m;
-    char l;
-    
-    f = '0';
-    while (f <= '9')
+    num[0] = '0';
+    while (num[0] <= '7')
     {
-        m =  f + 1;
-        while (m <= '9')
-        {        
-            l = m + 1;
-            while (l <= '9')
+        num[1] = num[0] + 1;
+        while (num <= '8')
+        {
+            num[2] = num[1] + 1;
+            while (num[2] <= '9')
             {
-                printing(f,m,l);
-                if(!(f == '7' && m == '8' && l == '9'))
-                {
-                    ft_commas();
-                }
-                l++;
+                ft_putchar(num[0]);
+                ft_putchar(num[1]);
+                ft_putchar(num[2]);
+                if (num[0] != '7')
+				{
+					ft_putchar(',');
+					ft_putchar(' ');
+				}
+                num[2]++;
             }
-            m++;
+            num[1]++;
         }
-        f++;   
+        num[0]++;
     }
-
+    
 }
 
-int main()
+int main ()
 {
-    print_comb();
+    ft_print_comb();
 }
