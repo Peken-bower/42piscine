@@ -6,7 +6,7 @@
 /*   By: aelmrabe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 08:37:39 by aelmrabe          #+#    #+#             */
-/*   Updated: 2022/07/26 09:06:19 by aelmrabe         ###   ########.fr       */
+/*   Updated: 2022/08/20 12:06:43 by aelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
          Write a function that displays the character passed as a parameter.   
                  The function should be declared like this:
 
-                          void ft_putchar(char c);
+                          void ft_putchar_fd(char c);
 
           Write is a file Descriptor is Not A Function is Not Like Printf . 
                 we can't use printf in Pool because is forbidden.
@@ -33,10 +33,10 @@
 
 #include <unistd.h>  // Unistd Lib is for Unix System is a header file that provides access to the POSIX Linux API {check *2}
 #include <stdio.h>
-void ft_putchar(char c) /*
+void ft_putchar_fd(char c) /*
                           Here we declare our function using this prototype . {*3 , *4 }
                           Void : this is The type of data that the function will return , here we use void because function don't return anything{*5}
-                          ft_putchar : this is name of function ? .
+                          ft_putchar_fd : this is name of function ? .
                           () : parameter to execute this function .
                           char c : the Data type of parameter is char{*6}.
                          */
@@ -66,6 +66,6 @@ void ft_putchar(char c) /*
 char main(char c){
         write(1,"can you please give me your char? :  ",37);
         read(1,&c,1);
-        ft_putchar(c);
+        ft_putchar_fd(c);
         write(1,"\n",1);
 }

@@ -6,7 +6,7 @@
 /*   By: aelmrabe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 19:18:29 by aelmrabe          #+#    #+#             */
-/*   Updated: 2022/07/27 22:42:28 by aelmrabe         ###   ########.fr       */
+/*   Updated: 2022/08/20 12:06:43 by aelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,22 @@
 #include <unistd.h>
 
 
-void	ft_putchar(char c)
+void	ft_putchar_fd(char c)
 {
 	write(1, &c, 1);
 }
 
 void	ft_commas(void)
 {
-	ft_putchar(',');
-	ft_putchar(' ');
+	ft_putchar_fd(',');
+	ft_putchar_fd(' ');
 }
 
 void printing(char f, char m, char l)
 {
-    ft_putchar(f);
-    ft_putchar(m);
-    ft_putchar(l);
+    ft_putchar_fd(f);
+    ft_putchar_fd(m);
+    ft_putchar_fd(l);
 }
 
 void print_comb(void)
@@ -73,7 +73,7 @@ void print_comb(void)
 }
 
 /* ************************************************************************* */
-void    ft_putchar(char c)
+void    ft_putchar_fd(char c)
 {
     write(1, &c, 1);
 }
@@ -94,12 +94,12 @@ void    ft_print_comb(void)
             while (++nbr3 <= '9')
             {
                 if (nbr1 != '0' || nbr2 != '1' || nbr3 != '2')
-                    ft_putchar(',');
+                    ft_putchar_fd(',');
                 if (nbr1 != '0' || nbr2 != '1' || nbr3 != '2')
-                    ft_putchar(' ');
-                ft_putchar(nbr1);
-                ft_putchar(nbr2);
-                ft_putchar(nbr3);
+                    ft_putchar_fd(' ');
+                ft_putchar_fd(nbr1);
+                ft_putchar_fd(nbr2);
+                ft_putchar_fd(nbr3);
             }
         }
     }
@@ -122,7 +122,7 @@ int main(void){
 
  /* ************************************************************************* */
 
-void  ft_putchar(char c)
+void  ft_putchar_fd(char c)
 {
     write(1, &c, 1);
 }
@@ -142,10 +142,10 @@ void    count(void)
         {
             while (c <= '9')
             {
-                ft_putchar(a);
-                ft_putchar(b);
-                ft_putchar(c);
-                ft_putchar(' ');
+                ft_putchar_fd(a);
+                ft_putchar_fd(b);
+                ft_putchar_fd(c);
+                ft_putchar_fd(' ');
                 c++;
             }
             b++;
@@ -171,11 +171,11 @@ void    ft_print_comb(void)
             c = b + 1;
             while(c < 10)
             {
-                ft_putchar(48 + a);
-                ft_putchar(48 + b);
-                ft_putchar(48 + c);
-                ft_putchar(',');
-                ft_putchar(' ');
+                ft_putchar_fd(48 + a);
+                ft_putchar_fd(48 + b);
+                ft_putchar_fd(48 + c);
+                ft_putchar_fd(',');
+                ft_putchar_fd(' ');
                 ++c;
             }
             ++b;
@@ -186,7 +186,7 @@ void    ft_print_comb(void)
 
   /* ************************************************************************* */
 
-void ft_putchar(char c)
+void ft_putchar_fd(char c)
 {
     write(1, &c, 1);
 }
@@ -203,13 +203,13 @@ void ft_print_comb(void)
             num[2] = num[1] + 1;
             while (num[2] <= '9')
             {
-                ft_putchar(num[0]);
-                ft_putchar(num[1]);
-                ft_putchar(num[2]);
+                ft_putchar_fd(num[0]);
+                ft_putchar_fd(num[1]);
+                ft_putchar_fd(num[2]);
                 if (num[0] != '7')
 				{
-					ft_putchar(',');
-					ft_putchar(' ');
+					ft_putchar_fd(',');
+					ft_putchar_fd(' ');
 				}
                 num[2]++;
             }

@@ -6,7 +6,7 @@
 /*   By: aelmrabe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 18:43:16 by aelmrabe          #+#    #+#             */
-/*   Updated: 2022/07/26 18:58:13 by aelmrabe         ###   ########.fr       */
+/*   Updated: 2022/08/20 12:06:43 by aelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void ft_is_negative(int n)
 
 /* ************************************************************************** */
 
-void ft_putchar(char c)
+void ft_putchar_fd(char c)
 {
     write(1, &c, 1);
 }
@@ -32,7 +32,7 @@ void ft_putchar(char c)
 void ft_is_negative(int n)
 {
     if(n < 0)
-    ft_putchar('N');
+    ft_putchar_fd('N');
     else
-    ft_putchar('P');
+    ft_putchar_fd('P');
 }
